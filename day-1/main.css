@@ -1,0 +1,39 @@
+:root {
+  --primary-green: #248b0a;
+  --light-bg: #f4f6f8;
+}
+
+body {
+  background-color: var(--light-bg);
+  min-height: 100vh;
+  font-family: "Segoe UI", Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-card {
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 0.75rem;
+  width: 100%;
+  max-width: 800px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+  color: var(--primary-green);
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.btn-submit {
+  background-color: var(--primary-green);
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn-submit:hover {
+  background-color: #1e7008;
+}
