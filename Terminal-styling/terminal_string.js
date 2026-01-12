@@ -31,7 +31,7 @@ console.log(COLORS.bold + "Program 2: Bold Text" + COLORS.reset);
 console.log(COLORS.underline + "Program 2: Underlined Text" + COLORS.reset);
 
 console.log(
-  COLORS.bgGreen + COLORS.red + " Program 3: Background + Red " + COLORS.reset
+  COLORS.bgGreen + COLORS.red + " Program 3: Background + Red " + COLORS.reset,
 );
 
 console.log(
@@ -39,7 +39,7 @@ console.log(
     COLORS.green +
     COLORS.bold +
     " Program 4: Combined Styles " +
-    COLORS.reset
+    COLORS.reset,
 );
 
 /* MENU */
@@ -74,10 +74,18 @@ function logWithTime(msg) {
 }
 
 class Logger {
-  static info(msg)    { logWithTime(`${COLORS.cyan}[INFO]${COLORS.reset} ${msg}`); }
-  static success(msg) { logWithTime(`${COLORS.green}[SUCCESS]${COLORS.reset} ${msg}`); }
-  static warn(msg)    { logWithTime(`${COLORS.yellow}[WARN]${COLORS.reset} ${msg}`); }
-  static error(msg)   { logWithTime(`${COLORS.red}[ERROR]${COLORS.reset} ${msg}`); }
+  static info(msg) {
+    logWithTime(`${COLORS.cyan}[INFO]${COLORS.reset} ${msg}`);
+  }
+  static success(msg) {
+    logWithTime(`${COLORS.green}[SUCCESS]${COLORS.reset} ${msg}`);
+  }
+  static warn(msg) {
+    logWithTime(`${COLORS.yellow}[WARN]${COLORS.reset} ${msg}`);
+  }
+  static error(msg) {
+    logWithTime(`${COLORS.red}[ERROR]${COLORS.reset} ${msg}`);
+  }
 }
 
 /* CLI SUPPORT */
@@ -85,11 +93,19 @@ function showHelp() {
   console.log(COLORS.cyan + "Terminal Styling Demo" + COLORS.reset);
   console.log("════");
   console.log("Commands:");
-  console.log("  node terminal_string.js                          → show this demo");
-  console.log("  node terminal_string.js info \"Starting up...\"    → info message");
-  console.log("  node terminal_string.js success \"Done!\"          → success message");
-  console.log("  node terminal_string.js warn \"Low stock\"         → warning");
-  console.log("  node terminal_string.js error \"Failed\"           → error message");
+  console.log(
+    "  node terminal_string.js                          → show this demo",
+  );
+  console.log(
+    '  node terminal_string.js info "Starting up..."    → info message',
+  );
+  console.log(
+    '  node terminal_string.js success "Done!"          → success message',
+  );
+  console.log('  node terminal_string.js warn "Low stock"         → warning');
+  console.log(
+    '  node terminal_string.js error "Failed"           → error message',
+  );
   console.log("\nEnjoy the colors! \n");
 }
 
@@ -119,8 +135,8 @@ function handleCLI() {
 
   console.log(
     COLORS.yellow +
-      "Usage: node terminal_string.js <info|success|warn|error> \"your message\"" +
-      COLORS.reset
+      'Usage: node terminal_string.js <info|success|warn|error> "your message"' +
+      COLORS.reset,
   );
   return true;
 }
@@ -135,12 +151,16 @@ function progressBar(callback) {
     if (progress > 100) progress = 100;
 
     clearLine();
-    process.stdout.write(`Program 6: Loading ${progress.toString().padStart(3)}%`);
+    process.stdout.write(
+      `Program 6: Loading ${progress.toString().padStart(3)}%`,
+    );
 
     if (progress === 100) {
       clearInterval(interval);
       clearLine();
-      console.log(COLORS.green + "Program 6: Loading 100% - Complete!" + COLORS.reset);
+      console.log(
+        COLORS.green + "Program 6: Loading 100% - Complete!" + COLORS.reset,
+      );
       console.log("");
       callback();
     }
@@ -155,7 +175,9 @@ function spinner(done) {
 
   const interval = setInterval(() => {
     clearLine();
-    process.stdout.write(`${frames[i = (i + 1) % frames.length]} Working... `);
+    process.stdout.write(
+      `${frames[(i = (i + 1) % frames.length)]} Working... `,
+    );
   }, 80);
 
   setTimeout(() => {
@@ -176,13 +198,13 @@ function mainDemo() {
   logWithTime("Regular timestamp log");
 
   console.table([
-    { item: "Apples",  stock: 20, price: 4500 },
-    { item: "Bananas", stock: 5,  price: 2800 },
+    { item: "Apples", stock: 20, price: 4500 },
+    { item: "Bananas", stock: 5, price: 2800 },
     { item: "Mangoes", stock: 12, price: 7000 },
   ]);
 
   spinner(() => {
-    console.log(COLORS.red +   "- old price: 5000" + COLORS.reset);
+    console.log(COLORS.red + "- old price: 5000" + COLORS.reset);
     console.log(COLORS.green + "+ new price: 4500" + COLORS.reset + "\n");
 
     const data = { store: "Karibu Groceries", items: 87, revenue: "2.4M" };
@@ -201,8 +223,8 @@ function mainDemo() {
     Logger.error("Payment gateway timeout");
 
     console.log("\n" + COLORS.cyan + "Try CLI mode examples:" + COLORS.reset);
-    console.log("  node terminal_string.js success \"Order #124 completed!\"");
-    console.log("  node terminal_string.js error \"Payment failed\"\n");
+    console.log('  node terminal_string.js success "Order #124 completed!"');
+    console.log('  node terminal_string.js error "Payment failed"\n');
   });
 }
 
