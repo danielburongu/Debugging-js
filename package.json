@@ -1,11 +1,15 @@
 {
   "name": "debugging",
   "version": "1.0.0",
+  "type": "module",
   "description": "# Karibu Groceries – Procurement Form Debugging",
   "main": "eslint.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky"
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier \"**/*.{js,css,html,json,md}\" --write"
   },
   "keywords": [],
   "author": "",

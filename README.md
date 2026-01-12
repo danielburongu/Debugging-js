@@ -126,6 +126,7 @@ try {
 ```
 
 ---
+
 ## Pre-Commit Hooks
 
 This project uses Husky to enforce code quality before commits.
@@ -133,6 +134,7 @@ Before every commit, ESLint and Prettier are executed automatically
 to prevent linting and formatting issues from entering the repository.
 
 ### Code Quality Tools
+
 This project uses ESLint and Prettier to enforce consistent code style,
 catch common bugs, and improve maintainability. All files were linted
 and formatted successfully.
